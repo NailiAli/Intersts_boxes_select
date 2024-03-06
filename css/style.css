@@ -1,0 +1,100 @@
+:root {
+  --main-purple-color: #5c48f1;
+  --elements-background-color: #eeecfd;
+  --element-border-color: #e0e0e1;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.interests{
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+.interests h4{
+  color: var(--main-purple-color);
+  background-color: var(--elements-background-color);
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.interests .content{
+  
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: 20px;
+}
+.interests .content input[type='checkbox']{
+  display: none;
+}
+.interests .content label{
+  padding: 10px;
+  border: 1px solid var(--element-border-color);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.interests .content input[type='checkbox']:checked+label{
+  border-color: var(--main-purple-color);
+  background-color: var(--elements-background-color);
+}
+.interests .content label::before{
+  content: '';
+  position: absolute;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  outline: 2px solid var(--element-border-color);
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+.interests .content input[type='checkbox']:checked + label::before,
+.interests .content input[type='checkbox']:hover + label::before{
+  outline-color: var(--main-purple-color);
+}
+.interests .content label::after{
+  content: '';
+  position: absolute;
+  left: 12.5px;
+  top: 12.5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+.interests .content input[type='checkbox']:checked + label::after{
+  background-color: #5c48f1;
+}
+.interests .content input[type='checkbox']:not(:checked):hover + label::after{
+  background-color: var(--elements-background-color);
+}
+.interests .content label i{
+  color: var(--main-purple-color);
+}
+.interests .content label span{
+  margin-top: 20px;
+  font-weight: bold;
+}
